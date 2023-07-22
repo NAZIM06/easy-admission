@@ -15,3 +15,6 @@
   .button{
   @apply inline-flex items-center h-12 px-6 my-3 font-medium text-white transition duration-200 rounded shadow-md bg-blue-400 hover:bg-blue-600
 }
+.log-btn{
+  @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md
+}

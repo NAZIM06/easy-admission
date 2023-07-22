@@ -1,19 +1,17 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-// import img from "../../../../public/train-kids-toys-logo-vector_586862-66-removebg-preview.png"
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
         <footer className="footer p-3 bg-blue-900 text-white  flex flex-col  md:flex-row items-center justify-around">
         <div className="flex items-center">
-          <img src="https://www.freepnglogos.com/uploads/tesla-logo-png-27.png" alt="Logo" className="w-12 h-12 mr-2" />
-          <Link to="/" className="text-white text-4xl font-bold">
-            AdmissonEasy
+          <Link to="/" className="text-white text-3xl font-bold">
+            EasyAdmisson
           </Link>
         </div>
         <div className="">
-          <p>Address: 49/2 Toytopia Street,Dhaka City</p>
+          <p>Address: 49/2 EndGame Street,Dhaka City</p>
           <p>
             Important Links:{" "}
             <Link to="/my-toys">My Toys</Link> |{" "}
@@ -42,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <p>&copy; 2023 - All rights reserved by Toytopia</p>
+          <p>&copy; 2023 - All rights reserved by Easy Admission</p>
         </div>
       </footer>
       

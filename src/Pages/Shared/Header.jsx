@@ -31,9 +31,8 @@ const Header = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
-                        <img src="https://www.freepnglogos.com/uploads/tesla-logo-png-27.png" alt="Logo" className="w-12 h-12 mr-2" />
-                        <Link to="/" className="text-blue-900 text-4xl font-bold">
-                            AdmissionEasy
+                        <Link to="/" className="text-blue-900 text-3xl font-bold">
+                            EasyAdmission
                         </Link>
                     </div>
 
@@ -44,22 +43,22 @@ const Header = () => {
                                 Home
                             </NavLink>
                             <NavLink to="/all-toys" className="text-gray-500">
-                                All Toys
+                                All Colleges
+                            </NavLink>
+                            <NavLink to="/blog" className=" text-gray-500">
+                                Admission
                             </NavLink>
                             {user &&
                                 <>
-                                    <NavLink to={'/my-toys'} className="text-gray-500">My Toys</NavLink>
-                                    <NavLink to={'/add-toy'} className="text-gray-500">Add a toy</NavLink>
+                                    <NavLink to={'/my-toys'} className="text-gray-500">My College</NavLink>
                                 </>
                             }
-                            <NavLink to="/blog" className=" text-gray-500">
-                                Blog
-                            </NavLink>
+
                             {
                                 user ? <div className='flex items-center space-x-2 md:space-x-4'>
                                     <Tools text={user.displayName}>{user.photoURL ? <img className='rounded-full h-6 w-6' src={user.photoURL} alt="" /> : <HiOutlineUserCircle className='h-8 w-8' />}</Tools>
-                                    <button onClick={handleSignOut} className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md'>Log Out</button>
-                                </div> : <Link to='/login'><button className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md'>Login</button></Link>
+                                    <button onClick={handleSignOut} className='log-btn'>LOGOUT</button>
+                                </div> : <Link to='/login'><button className='log-btn'>LOGIN</button></Link>
                             }
 
                         </div>
@@ -117,8 +116,8 @@ const Header = () => {
                         {
                             user ? <div className='flex items-center space-x-2 md:space-x-4'>
                                 <Tools text={user.displayName}>{user.photoURL ? <img className='rounded-full h-6 w-6' src={user.photoURL} alt="" /> : <HiOutlineUserCircle className='h-8 w-8' />}</Tools>
-                                <button onClick={handleSignOut} className='bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-md'>Sign Out</button>
-                            </div> : <Link to='/login'><button className='bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-md'>Login</button></Link>
+                                <button onClick={handleSignOut} className='log-btn'>LOGOUT</button>
+                            </div> : <Link to='/login'><button className='log-btn'>LOGIN</button></Link>
                         }
                         <NavLink
                             to="/"
@@ -130,26 +129,24 @@ const Header = () => {
                             to="/all-toys"
                             className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-white hover:bg-gray-700"
                         >
-                            All Toys
+                            Colleges
                         </NavLink>
                         <NavLink
                             to="/my-toys"
                             className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-white hover:bg-gray-700"
                         >
-                            My Toys
+                            Admission
                         </NavLink>
-                        <NavLink
-                            to="/add-toy"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-white hover:bg-gray-700"
-                        >
-                            Add Toys
-                        </NavLink>
-                        <NavLink
-                            to="/blog"
-                            className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-white hover:bg-gray-700"
-                        >
-                            Blog
-                        </NavLink>
+                        {user &&
+                            <>
+                                <NavLink
+                                    to="/my-college"
+                                    className="block px-3 py-2 rounded-md text-base font-medium text-black hover:text-white hover:bg-gray-700"
+                                >
+                                    My College
+                                </NavLink>
+                            </>
+                        }
 
                     </div>
                 </div>
