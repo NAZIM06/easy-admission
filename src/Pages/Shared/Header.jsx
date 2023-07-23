@@ -1,7 +1,5 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { HiOutlineUserCircle } from "react-icons/hi";
-import Tools from "./Tools";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 
@@ -31,9 +29,7 @@ const Header = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
-                        <Link to="/" className="text-blue-900 text-3xl font-bold">
-                            EasyAdmission
-                        </Link>
+                        <Link to="/" className="pt-4"><img className="w-2/3" src="https://see.fontimg.com/api/renderfont4/DgaW/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/RWFzeUFkbWlzc2lvbg/tipo-press.png" alt="90s fonts" /></Link>
                     </div>
 
 
@@ -42,21 +38,23 @@ const Header = () => {
                             <NavLink to="/" className="text-gray-500">
                                 Home
                             </NavLink>
-                            <NavLink to="/all-toys" className="text-gray-500">
-                                All Colleges
+                            <NavLink to="/colleges" className="text-gray-500">
+                                Colleges
                             </NavLink>
-                            <NavLink to="/blog" className=" text-gray-500">
+                            <NavLink to="/admission" className=" text-gray-500">
                                 Admission
                             </NavLink>
                             {user &&
                                 <>
-                                    <NavLink to={'/my-toys'} className="text-gray-500">My College</NavLink>
+                                    <NavLink to={'/myCollege'} className="text-gray-500">My College</NavLink>
                                 </>
                             }
 
                             {
                                 user ? <div className='flex items-center space-x-2 md:space-x-4'>
-                                    <Tools text={user.displayName}>{user.photoURL ? <img className='rounded-full h-6 w-6' src={user.photoURL} alt="" /> : <HiOutlineUserCircle className='h-8 w-8' />}</Tools>
+                                    <Link to="/userDetails" className="button">
+                                        {user.displayName}
+                                    </Link>
                                     <button onClick={handleSignOut} className='log-btn'>LOGOUT</button>
                                 </div> : <Link to='/login'><button className='log-btn'>LOGIN</button></Link>
                             }
@@ -115,7 +113,8 @@ const Header = () => {
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {
                             user ? <div className='flex items-center space-x-2 md:space-x-4'>
-                                <Tools text={user.displayName}>{user.photoURL ? <img className='rounded-full h-6 w-6' src={user.photoURL} alt="" /> : <HiOutlineUserCircle className='h-8 w-8' />}</Tools>
+                                <Link to="/userDetails" className="button">
+                                    {user.displayName}</Link>
                                 <button onClick={handleSignOut} className='log-btn'>LOGOUT</button>
                             </div> : <Link to='/login'><button className='log-btn'>LOGIN</button></Link>
                         }

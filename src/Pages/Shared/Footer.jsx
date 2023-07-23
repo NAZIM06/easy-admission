@@ -4,19 +4,16 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="footer p-3 bg-blue-900 text-white  flex flex-col  md:flex-row items-center justify-around">
+        <footer className="footer p-3 bg-gray-600 text-white  flex flex-col  md:flex-row items-center justify-around">
         <div className="flex items-center">
-          <Link to="/" className="text-white text-3xl font-bold">
-            EasyAdmisson
-          </Link>
+        <Link to ="/" className="pt-4"><img className="w-2/3" src="https://see.fontimg.com/api/renderfont4/DgaW/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/RWFzeUFkbWlzc2lvbg/tipo-press.png" alt="90s fonts"/></Link>
         </div>
-        <div className="">
-          <p>Address: 49/2 EndGame Street,Dhaka City</p>
-          <p>
-            Important Links:{" "}
-            <Link to="/my-toys">My Toys</Link> |{" "}
-            <Link to="/all-toys">All Toys</Link> |{" "}
-            <Link to="/blog">Blog</Link>
+        <div>
+          <p> <span className="font-semibold">Address:</span> 49/2 EndGame Street,Dhaka City</p>
+          <p><span className='font-semibold'>Important Links:{" "}</span>
+            
+            <Link to="/my-toys">Colleges</Link> |{" "}
+            <Link to="/all-toys">Admission</Link> |{" "}
           </p>
         </div>
         <div>
